@@ -25,4 +25,8 @@ class User extends Model
         return "us_";
     }
 
+    public function accounts()
+    {
+        return $this->hasMany(Account::class, "user_id");
+    }
 }

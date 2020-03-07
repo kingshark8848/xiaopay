@@ -23,4 +23,8 @@ Route::prefix("v1")->group(function (){
     Route::get('/users', 'UserController@list')->name('users.list');
     Route::post('/users', 'UserController@create')->name('users.create');
     Route::get('/users/{user_id}', 'UserController@show')->name('users.show');
+
+    Route::get('/accounts', 'AccountController@list')->name('accounts.list');
+    Route::get('/users/{user_id}/accounts', 'AccountController@listOfUser')->name('users.accounts.list');
+    Route::post('/users/{user_id}/accounts', 'AccountController@create')->name('users.accounts.create');
 });
