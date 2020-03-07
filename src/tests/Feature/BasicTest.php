@@ -5,17 +5,16 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class ExampleTest extends TestCase
+class BasicTest extends TestCase
 {
     /**
-     * A basic test example.
+     * test api root access
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testApiRootAccess()
     {
-        $response = $this->get('/');
-
+        $response = $this->get('/api/v1/');
         $response->assertStatus(200);
     }
 }
