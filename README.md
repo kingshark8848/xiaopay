@@ -29,7 +29,7 @@ https://kingshark.gitbook.io/xiaopay-api-document/
 
 ## Install And Usage
 
-> @<xiaopay home> means at xiaopay project home path.
+> @[xiaopay home] means at xiaopay project home path.
 
 ### Prerequisite 
 
@@ -43,13 +43,13 @@ https://kingshark.gitbook.io/xiaopay-api-document/
 
 - set Laravel `.env` file:
 
-@<xiaopay home>, run `cp src/.env.example src/.env`. then edit `.env` file.
+@[xiaopay home], run `cp src/.env.example src/.env`. then edit `.env` file.
 
 > DB setting should match docker's settings, e.g host(mysql), port(3306, not external port!), username, password
 
 - other init 
 
-@<xiaopay home>, execute
+@[xiaopay home], execute
 
 `sudo chmod 777 -R src/storage/`
 
@@ -59,7 +59,7 @@ https://kingshark.gitbook.io/xiaopay-api-document/
 
 - launch docker containers
 
-@<xiaopay home>, execute
+@[xiaopay home], execute
 
 `docker-compose up -d`
 
@@ -67,7 +67,7 @@ https://kingshark.gitbook.io/xiaopay-api-document/
 
 - migrate
 
-@<xiaopay home>, execute
+@[xiaopay home], execute
 
 `docker-compose exec app php artisan migrate`
 
