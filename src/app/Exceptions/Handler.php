@@ -50,6 +50,17 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        if ($exception instanceof NotFoundHttpException){
+            throw new HttpNotFound();
+        }
+        elseif ($exception instanceof ValidationException){
+            throw (new ValidationError())->setErrors($exception->errors());
+        }
+
+        if ($exception instanceof AbstractXiaoPayApiError){
+            return $exception->renderJsonResponse();
+        }
+
         return parent::render($request, $exception);
     }
 }

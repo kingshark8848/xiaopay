@@ -14,3 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::prefix("v1")->group(function (){
+
+    Route::get('/', function (){
+        return response()->json(["message"=>"welcome to access XiaoPay API (v1)."]);
+    });
+
+    Route::get('/users', 'UserController@list')->name('users.list');
+    Route::post('/users', 'UserController@create')->name('users.create');
+    Route::get('/users/{user_id}', 'UserController@show')->name('users.show');
+});
