@@ -37,47 +37,29 @@ https://kingshark.gitbook.io/xiaopay-api-document/
 
 ### First time execute
 
-- edit `docker-config/{php|mysql|nginx}/*` based on different env.
+1. edit `docker-config/{php|mysql|nginx}/*` based on different env.
 
 > MUST config `docker-config/mysql/.env`, refer to `docker-config/mysql/.env.example`
 
-- set Laravel `.env` file:
+2. set Laravel `.env` file:
 
 @[xiaopay home], run `cp src/.env.example src/.env`. then edit `.env` file.
 
 > DB setting should match docker's settings, e.g host(mysql), port(3306, not external port!), username, password
 
-- other init 
-
-@[xiaopay home], execute
-
-`sudo chmod 777 -R src/storage/`
-
-`sudo chmod 777 -R src/bootstrap/cache/`
-
-`sudo docker run --rm -v $(pwd)/src:/app composer install`
-
-- launch docker containers
+3. launch docker containers
 
 @[xiaopay home], execute
 
 `docker-compose up -d`
 
-`docker-compose exec app php artisan key:generate`
-
-- migrate
-
-@[xiaopay home], execute
-
-`docker-compose exec app php artisan migrate`
-
-- (optional) seed for local or testing env
-
-`docker-compose exec app php artisan db:seed`
-
-- All done
+4. All done
 
 you can request to api root GET `http://0.0.0.0:8080/api/v1`. if has
+
+5. (optional) seed for local or testing env
+
+`docker-compose exec app php artisan db:seed`
 
 ```
 {"message":"welcome to access XiaoPay API (v1)."}
