@@ -5,7 +5,7 @@ chmod 777 -R bootstrap/cache/
 
 composer install
 
-php artisan key:generate
 php artisan migrate
+php artisan key:generate
 
 php-fpm
